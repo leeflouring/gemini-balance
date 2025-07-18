@@ -2,9 +2,12 @@ name: Publish Release
 
 on:
   push:
-    tags:
-      - "v*" # 当推送以 "v" 开头的标签时触发（如 v1.0.0, v2.1.0）
-
+  pull_request:
+    branches: [ "main" ]
+  
+  # 新增的行
+  workflow_dispatch:
+  
 jobs:
   update-release-draft:
     permissions:
